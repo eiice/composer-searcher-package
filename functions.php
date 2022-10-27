@@ -1,6 +1,6 @@
 <?php
 
-function exibeMensagem($mensagem)
+function showMessages($message)
 {
-  echo $mensagem . PHP_EOL;
+  echo $message . PHP_EOL;
 }

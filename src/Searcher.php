@@ -1,8 +1,8 @@
 <?php
 
-namespace Busca\BuscadorDeCursos;
+namespace Search\CoursesSearch;
 
-class Buscador
+class Searcher
 {
   private $httpClient;
   private $crawler;
@@ -13,20 +13,20 @@ class Buscador
     $this->crawler = $crawler;
   }
 
-  public function buscar($url): array
+  public function search($url): array
   {
     $response = $this->httpClient->request('GET', "$url");
     $html = $response->getBody();
 
     $this->crawler->addHtmlContent($html);
 
-    $elementosCursos = $this->crawler->filter('span.card-curso__nome');
-    $cursos = [];
+    $coursesElements = $this->crawler->filter('span.card-curso__nome');
+    $courses = [];
 
-    foreach ($elementosCursos as $elemento) {
-      $cursos[] = $elemento->textContent;
+    foreach ($coursesElements as $element) {
+      $courses[] = $element->textContent;
     }
 
-    return $cursos;
+    return $courses;
   }
 }

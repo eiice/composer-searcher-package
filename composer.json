@@ -1,6 +1,6 @@
 {
-    "name": "eicexxk/buscador-cursos",
-    "description": "Projeto que busca os cursos no site da Alura",
+    "name": "eicexxk/search-courses",
+    "description": "Project that searches for courses in Alura site",
     "type": "library",
     "authors": [
         {
@@ -14,10 +14,10 @@
         "symfony/css-selector": "^5.4"
     },
     "autoload": {
-      "classmap": ["./Teste.php"],
+      "classmap": ["./Test.php"],
       "files": ["./functions.php"],
       "psr-4": {
-        "Busca\\BuscadorDeCursos\\": "src/"
+        "Search\\CoursesSearch\\": "src/"
       }
     },
     "require-dev": {
@@ -37,6 +37,6 @@
       ]
     },
     "scripts-descriptions": {
-      "check": "Roda as verificações dos scripts PHAN, e PHPCS"
+      "check": "Run validations of PHAN and PHPCS scripts"
     }
 }
